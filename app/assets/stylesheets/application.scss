@@ -15,3 +15,13 @@
  */
 @import 'bootstrap';
 
+.nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: aquamarine;
+    padding: 10px;
+}
+

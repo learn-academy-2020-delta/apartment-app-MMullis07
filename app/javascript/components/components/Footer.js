@@ -8,10 +8,10 @@ class Footer extends React.Component {
                 <div id="footer">
                     <Nav>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <a href="/">Home</a>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="/apartmentindex">All Apartments</NavLink>
+                            <a href="/apartmentindex">All Apartments</a>
                         </NavItem>
                         {this.props.logged_in &&
                             <NavItem>
