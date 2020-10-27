@@ -1,10 +1,35 @@
 import React from "react"
+import { Nav, NavItem, NavLink } from 'reactstrap'
 
 class Footer extends React.Component {
     render() {
         return (
             <>
-                <h3>This is the footer</h3>
+                <div id="footer">
+                    <Nav>
+                        <NavItem>
+                            <NavLink href="/">Home</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/apartmentindex">All Apartments</NavLink>
+                        </NavItem>
+                        {this.props.logged_in &&
+                            <NavItem>
+                                <a href={this.props.sign_out_route}>Sign Out</a>
+                            </NavItem>
+                        }
+                        {!this.props.logged_in &&
+                            <>
+                                <NavItem>
+                                    <a href={this.props.sign_in_route}>Log In</a>
+                                </NavItem>
+                                <NavItem>
+                                    <a href={this.props.sign_up_route}>Sign Up</a>
+                                </NavItem>
+                            </>
+                        }
+                    </Nav>
+                </div>
             </>
         )
     }
