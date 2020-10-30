@@ -6,7 +6,7 @@ class NotFound extends React.Component {
     render() {
         return (
             <>
-                <h3>This is the not found page</h3>
+                <h3><em>This is the not found page</em></h3>
             </>
         )
     }

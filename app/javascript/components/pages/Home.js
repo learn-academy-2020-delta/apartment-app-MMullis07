@@ -1,12 +1,33 @@
 import React from "react"
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import apartmentImage from "../assets/homeimg.jpg"
+import Carousels from "../components/Carousels"
+
+import {
+    Container
+} from 'reactstrap';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 class Home extends React.Component {
     render() {
         return (
             <>
-                <h3>This is the Home Page</h3>
+                <div id="home" style={{
+                    backgroundImage: `url(${apartmentImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }}>
+                    <p id="home-title"><em>Where to next?</em></p>
+                    <br />
+                    <Link to="/#carousel-body"
+                        className="button">
+                        <em>Find your next home!</em>
+                    </Link>
+                </div>
+                <Container id="carousel-body">
+                    <Carousels />
+                </Container>
             </>
         )
     }

@@ -2,14 +2,15 @@ let mockApts = [
     {
         id: 1,
         street: "221 Baker St",
-        city: "Londong",
+        city: "London",
         state: "UK",
         manager: "Ms. Hudson",
         email: "ms-hud@uk.com",
         price: "1000",
         bedrooms: 2,
         bathrooms: 2,
-        pets: "no"
+        pets: "no",
+        user_id: 1
     },
     {
         id: 2,
@@ -21,7 +22,8 @@ let mockApts = [
         price: "500",
         bedrooms: 3,
         bathrooms: 2,
-        pets: "yes"
+        pets: "yes",
+        user_id: 1
     },
     {
         id: 3,
@@ -33,6 +35,10 @@ let mockApts = [
         price: "1000",
         bedrooms: 1,
         bathrooms: 1,
-        pets: "yes"
+        pets: "yes",
+        user_id: 2
+
     }
 ]
+
+export default mockApts

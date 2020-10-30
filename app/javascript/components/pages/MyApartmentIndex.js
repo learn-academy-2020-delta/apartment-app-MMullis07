@@ -4,12 +4,12 @@ import {
     Col,
     Row,
     Container
-} from 'reactstrap'
+} from 'reactstrap';
+import Modals from "../components/Modals"
 import apartmentImage from "../assets/homeimg.jpg"
 
-class ApartmentIndex extends React.Component {
+class MyApartmentIndex extends React.Component {
     render() {
-        console.log(this.props.apartments)
         return (
             <>
                 <div id="apt-index" style={{
@@ -19,12 +19,11 @@ class ApartmentIndex extends React.Component {
                     backgroundRepeat: 'no-repeat',
                     height: '100vh'
                 }}>
-                    <h3 className="pageh3"><em>Available Apartments</em></h3>
+                    <h3 className="pageh3"><em>Your Apartments</em></h3>
                     <Container className="index-apts">
                         <div id="index-body">
                             {this.props.apartments.map((apartment, index) => {
                                 return (
-
                                     <div key={index} className="index-card">
                                         <h3>{apartment.bedrooms} BD/{apartment.bathrooms} BA</h3>
                                         <h3>${apartment.price}</h3>
@@ -34,9 +33,15 @@ class ApartmentIndex extends React.Component {
                                         <Link to={`/apartmentshow/${apartment.id}`}
                                             className="button">
                                             More Info
-                                                </Link>
+                                </Link>
+                                        <Link to={`/apartmentedit/${apartment.id}`}
+                                            className="button">
+                                            Edit Info
+                                </Link>
+                                        <span onClick={() => { this.props.deleteApartment(apartment.id) }} className="button">
+                                            Remove Listing
+                                </span>
                                     </div>
-
                                 )
                             })}
                         </div>
@@ -47,4 +52,4 @@ class ApartmentIndex extends React.Component {
     }
 }
 
-export default ApartmentIndex
+export default MyApartmentIndex
