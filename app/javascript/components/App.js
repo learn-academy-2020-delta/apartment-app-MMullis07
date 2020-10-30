@@ -2,7 +2,6 @@ import React from "react"
 
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Modals from './components/Modals'
 
 import ApartmentEdit from './pages/ApartmentEdit'
 import ApartmentIndex from './pages/ApartmentIndex'
@@ -11,19 +10,12 @@ import ApartmentShow from './pages/ApartmentShow'
 import MyApartmentIndex from './pages/MyApartmentIndex'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
-// import mockApartments from './mockApartments.js'
-// import PropTypes from "prop-types"
 import {
   BrowserRouter as Router,
   NavLink,
   Route,
   Switch
 } from 'react-router-dom'
-
-
-// import { Nav, NavItem } from 'reactstrap'
-
-
 
 
 class App extends React.Component {
@@ -95,7 +87,6 @@ class App extends React.Component {
       method: "DELETE"
     })
       .then(response => {
-        <Modals />
         this.getApartments()
         return response
       })
